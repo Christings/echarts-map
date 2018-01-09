@@ -2,18 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a12ad1b9-d1b6-4de6-90f3-87a6fcfdb4a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/baiduMap1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/baiduMap2.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/baiduMap3.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baidu.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduExtension1.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baiduMap01.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/baidumap.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/map.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BMap/doc/example.html" afterPath="$PROJECT_DIR$/BMap/doc/example.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/BMap/doc/example.js" afterPath="$PROJECT_DIR$/BMap/doc/example.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -71,12 +59,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="example.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="example.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/BMap/doc/example.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="264">
-              <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+              <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="480">
+                <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -111,7 +112,6 @@
         <option value="$PROJECT_DIR$/map.html" />
         <option value="$PROJECT_DIR$/chinaMap1.html" />
         <option value="$PROJECT_DIR$/chinaMap2.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/1.html" />
         <option value="$PROJECT_DIR$/baidu.html" />
         <option value="$PROJECT_DIR$/baiduExtension1.html" />
@@ -122,6 +122,7 @@
         <option value="$PROJECT_DIR$/baiduMap1.html" />
         <option value="$PROJECT_DIR$/baiduMap2.html" />
         <option value="$PROJECT_DIR$/baiduMap3.html" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -131,7 +132,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="113" />
     <option name="y" value="69" />
     <option name="width" value="1664" />
@@ -310,15 +311,15 @@
       <workItem from="1514185353877" duration="4108000" />
       <workItem from="1514192932907" duration="12005000" />
       <workItem from="1514358244461" duration="1473000" />
-      <workItem from="1515482084224" duration="2648000" />
+      <workItem from="1515482084224" duration="3272000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36826000" />
+    <option name="totallyTimeSpent" value="37450000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="113" y="69" width="1664" height="1021" extended-state="1" />
+    <frame x="113" y="69" width="1664" height="1021" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -552,17 +553,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="96">
-            <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/worldMap.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5424">
@@ -715,8 +705,19 @@
     <entry file="file://$PROJECT_DIR$/BMap/doc/example.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
-          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <caret line="11" column="11" lean-forward="false" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="480">
+            <caret line="20" column="36" lean-forward="true" selection-start-line="20" selection-start-column="36" selection-end-line="20" selection-end-column="36" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
