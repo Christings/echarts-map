@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="js/echarts.js"></script>
+    <script src="js/china.js"></script>
+</head>
+<body>
+<div id="main" style="width: 700px;height:700px;"></div>
+<script>
+    var myChart = echarts.init(document.getElementById('main'));
+
+    option = {
+        series : [
+            {
+                name: 'Map',
+                type: 'map',
+                mapType: 'china',
+                mapLocation: {
+                    x : 'left',
+                    y : 'top',
+                    height : 500
+                },
+                selectedMode: 'multiple',
+                itemStyle: {
+                    normal: {
+                        borderWidth:2,
+                        borderColor:'green',
+                        color: 'orange',
+                        label: {
+                            show: true
+                        }
+                    },
+                    emphasis: {                 // 也是选中样式
+                        borderWidth:2,
+                        borderColor:'#fff',
+                        color: '#32cd32',
+                        label: {
+                            show: true,
+                            textStyle: {
+                                color: '#fff'
+                            }
+                        }
+                    }
+                },
+                data:[
+                    {
+                        name: '北京',
+                        value: Math.round(Math.random()*1000),
+                        itemStyle: {
+                            normal: {
+                                color: '#32cd32',
+                                label: {
+                                    show: true,
+                                    textStyle: {
+                                        color: 'black',
+                                        fontSize: 15
+                                    }
+                                }
+                            },
+                            emphasis: {                 // 也是选中样式
+                                borderWidth:5,
+                                borderColor:'yellow',
+                                color: '#cd5c5c',
+                                label: {
+                                    show: false,
+                                    textStyle: {
+                                        color: 'blue'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                ],
+//                geoCoord: {
+//                    '上海': [121.4648,31.2891],
+//                    '天津': [117.4219,39.4189]
+//                }
+            }
+        ]
+    };
+
+
+    myChart.setOption(option);
+
+</script>
+</body>
+</html>

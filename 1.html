@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Hello, World</title>
+    <style type="text/css">
+        html {
+            height: 100%
+        }
+
+        body {
+            height: 100%;
+            margin: 0px;
+            padding: 0px
+        }
+
+        #container {
+            height: 100%
+        }
+    </style>
+    <script src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=apNxGt8xYmlexECvghD81XqGqCsNx8PV">
+        //v2.0版本的引用方式：src="http://api.map.baidu.com/api?v=2.0&ak=您的密钥"
+    </script>
+</head>
+
+<body>
+<div id="allmap" style="height: 600px"></div>
+<br/>
+<span id="lng"></span>
+<span id="lat"></span>
+<script type="text/javascript">
+        $(function () {
+            //==========隔1500秒调整视野到"上海"===========
+            //GetMapByChina();
+
+            //==========根据经纬度加载地图===============
+            //var pointX = "31.035434";
+            //var pointY = "121.248119";
+            //var address = "松江国际生态商务区光星路1688号(松江万达广场旁)";
+            //var buildName = "新江湾首府";
+            //GetMapByPoint(pointX, pointY, address, buildName);
+
+            //===========根据项目地址获取地图信息
+            //GetMapByAddress("长宁区延安西路1160号","上海","首信银都");
+
+            //===========可拖拽地图显示坐标======
+            var pointX = "31.035434";
+            var pointY = "121.248119";
+            setLocation(pointX, pointY);
+        });
+
+    //==========隔1500秒调整视野到"上海"===========
+    var map = new window.BMap.Map("allmap");
+
+    function GetMapByChina() {
+        //百度地图API功能
+
+        map.centerAndZoom(new window.BMap.Point(116.403765, 39.914850), 7);
+        map.enableScrollWheelZoom();
+
+        setTimeout(function () {
+            getBoundary();
+        }, 1500);
+
+        function getBoundary() {
+            var bdary = new window.BMap.Boundary();
+            bdary.get("上海", function (rs) { //获取行政区域
+                map.clearOverlays(); //清除地图覆盖物
+                var count = rs.boundaries.length; //行政区域的点有多少个
+                for (var i = 0; i < count; i++) {
+                    var ply = new window.BMap.Polygon(rs.boundaries[i], {strokeWeight: 2, strokeColor: "#ff0000"}); //建立多边形覆盖物
+                    map.addOverlay(ply); //添加覆盖物
+                    map.setViewport(ply.getPath());
+                    alert(map.point.layerX());
+                }
+            });
+        }
+    }
+
+    //============根据经纬度加载地图==============
+    function GetMapByPoint(pointX, pointY, address, buildName) {
+        //lat 经度 lng 纬度 address 项目地址 name  项目名称
+        var point = new window.BMap.Point(pointY, pointX, address, buildName);
+        SetContent(point, address, name);
+    }
+
+
+    //根据项目地址获取地图信息
+    function GetMapByAddress(address, city, name) {
+        // 创建地址解析器实例
+        var myGeo = new BMap.Geocoder();
+        // 将地址解析结果显示在地图上,并调整地图视野
+        myGeo.getPoint(address, function (point) {
+            if (point) {
+                SetContent(point, address, name);
+            }
+        }, city);
+    }
+
+    function SetContent(point, address, name) {
+        var map = new BMap.Map("allmap");
+        var marker = new BMap.Marker(point, {enableDragging: true,}); //enableDragging 标注物可拖拽
+        map.addOverlay(marker);
+        //经度
+        alert("经度:" + point.lat);
+        //纬度
+        alert("纬度:" + point.lng);
+        var opts = {
+            width: 200,     // 信息窗口宽度
+            height: 60,     // 信息窗口高度
+            title: name, // 信息窗口标题
+            enableMessage: false,//设置允许信息窗发送短息
+            //message: "您好，请点击下面的链接查看地图"
+        };
+
+        var infoWindow = new BMap.InfoWindow("地址：" + address, opts); // 创建信息窗口对象
+        map.openInfoWindow(infoWindow, point);
+        map.centerAndZoom(point, 15);
+        SetMarkerEvent(marker, infoWindow); //添加标注拖拽事件
+        map.enableScrollWheelZoom(true); //启动地图拖拽功能
+        map.addControl(new BMap.NavigationControl({anchor: BMAP_ANCHOR_TOP_RIGHT,})); //右上角添加添加默认缩放平移控件
+    }
+
+    //经纬度显示，拖拽后显示经纬度
+    function setLocation(x, y) {//参数：经纬度
+        map.clearOverlays();
+        var point = new window.BMap.Point(x, y);
+        map.centerAndZoom(point, 7);
+        var marker = new window.BMap.Marker(point);  // 创建标注
+        map.addOverlay(marker);              // 将标注添加到地图中
+        marker.enableDragging();    //可拖拽
+        $("#lng").val(point.lng);
+        $("#lat").val(point.lat);
+        map.enableScrollWheelZoom();
+        marker.addEventListener('dragend', getlngAndlat);
+
+        //拖拽时调用的方法
+        function getlngAndlat(e) {
+            if (e.point.lng != null) {
+                $("#lng").val(e.point.lng);
+                $("#lat").val(e.point.lat);
+                alert("拖拽后的坐标经度:" + e.point.lng);
+                alert("拖拽后的坐标纬度:" + e.point.lat);
+            }
+        }
+
+        map.addOverlay(marker);
+    }
+</script>
+
+</body>
+</html>
