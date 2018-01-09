@@ -1,4 +1,4 @@
-# map
+# echarts-map
 ## worldMap--世界地图
 ## chinaMap1--中国地图1
 ## chinaMap2--中国地图2

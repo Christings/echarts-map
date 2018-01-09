@@ -15,7 +15,7 @@
 
     require(
     [
-        'js/echarts',
+        'echarts',
         'BMap',
         'echarts/chart/map'
     ],
